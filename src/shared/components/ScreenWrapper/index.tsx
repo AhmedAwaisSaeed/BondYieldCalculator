@@ -28,6 +28,9 @@ export const ScreenWrapper = ({
           enableAutomaticScroll={true}
           extraHeight={20}
           extraScrollHeight={20}
+          scrollEnabled={true}
+          nestedScrollEnabled={true}
+          keyboardDismissMode="none"
         >
           {children}
         </KeyboardAwareScrollView>

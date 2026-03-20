@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 1,
     padding: Spacing.md,
+    minHeight: '100%',
   },
   staticContent: {
     flex: 1,
