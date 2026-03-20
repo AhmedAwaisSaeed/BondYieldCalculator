@@ -35,6 +35,7 @@ export const Input = forwardRef<TextInput, InputProps>(
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholderTextColor="#94A3B8"
+            blurOnSubmit={false}
             {...rest}
           />
         </View>

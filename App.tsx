@@ -36,7 +36,10 @@ const App = () => {
     <GestureHandlerRootView style={styles.root}>
       <Provider store={store}>
         <SafeAreaProvider>
-          <KeyboardProvider>
+          <KeyboardProvider
+            statusBarTranslucent={false}
+            navigationBarTranslucent={false}
+          >
             <StatusBar 
               barStyle="dark-content" 
               backgroundColor="transparent" 

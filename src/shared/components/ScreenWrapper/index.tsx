@@ -24,6 +24,10 @@ export const ScreenWrapper = ({
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
+          enableOnAndroid={true}
+          enableAutomaticScroll={true}
+          extraHeight={20}
+          extraScrollHeight={20}
         >
           {children}
         </KeyboardAwareScrollView>
