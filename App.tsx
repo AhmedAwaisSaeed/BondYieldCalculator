@@ -2,7 +2,6 @@ import React from 'react';
 import { I18nManager, StatusBar, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { Provider } from 'react-redux';
 import { store } from '@/store/rtk/store';
 import { RootNavigator } from '@/navigation/RootNavigator';
@@ -36,17 +35,12 @@ const App = () => {
     <GestureHandlerRootView style={styles.root}>
       <Provider store={store}>
         <SafeAreaProvider>
-          <KeyboardProvider
-            statusBarTranslucent={false}
-            navigationBarTranslucent={false}
-          >
-            <StatusBar 
-              barStyle="dark-content" 
-              backgroundColor="transparent" 
-              translucent={false}
-            />
-            <RootNavigator />
-          </KeyboardProvider>
+          <StatusBar 
+            barStyle="dark-content" 
+            backgroundColor="transparent" 
+            translucent={false}
+          />
+          <RootNavigator />
         </SafeAreaProvider>
       </Provider>
     </GestureHandlerRootView>

@@ -7,10 +7,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.background,
   },
+  keyboardAvoidingView: {
+    flex: 1,
+  },
   scrollContent: {
     flexGrow: 1,
     padding: Spacing.md,
-    minHeight: '100%',
+    paddingBottom: Spacing.xl, // Extra bottom padding for keyboard
   },
   staticContent: {
     flex: 1,
