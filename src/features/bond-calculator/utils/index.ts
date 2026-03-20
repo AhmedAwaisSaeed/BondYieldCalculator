@@ -1,2 +1,3 @@
-// Bond calculation utilities — implemented in Phase 3
-export {};
+export { validateBondForm, isFormValid } from './validation';
+export type { FormErrors } from './validation';
+export { BOND_CONSTANTS } from './constants';
