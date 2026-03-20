@@ -1,2 +1,1 @@
-// Feature Zustand store — implemented in Phase 2
-export {};
+export { useBondFormStore } from './useBondFormStore';

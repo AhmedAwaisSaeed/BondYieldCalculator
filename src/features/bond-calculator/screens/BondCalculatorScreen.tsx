@@ -5,18 +5,28 @@ import { ScreenWrapper } from '@/shared/components/ScreenWrapper';
 import { Button } from '@/shared/components/Button';
 import { Input } from '@/shared/components/Input';
 import { Colors } from '@/shared/theme/colors';
-import { Spacing, BorderRadius } from '@/shared/theme/spacing';
+import { BorderRadius, Spacing } from '@/shared/theme/spacing';
 import { Typography } from '@/shared/typography';
 import { useAppStore } from '@/store/zustand/useAppStore';
+import { FrequencySelector } from '../components/FrequencySelector';
+import { useBondForm } from '../hooks/useBondForm';
 
 export const BondCalculatorScreen = () => {
   const { t } = useTranslation();
   const { language, setLanguage, isInitialized } = useAppStore();
+  const { form, errors, setFrequency, handleChange, handleSubmit, handleReset, refs } =
+    useBondForm();
 
-  // Don't render until app is properly initialized
   if (!isInitialized) {
     return null;
   }
+
+  const onCalculate = () => {
+    const valid = handleSubmit();
+    if (valid) {
+      // Phase 3: navigate to results
+    }
+  };
 
   return (
     <ScreenWrapper>
@@ -69,38 +79,84 @@ export const BondCalculatorScreen = () => {
         </View>
       </View>
 
-      {/* Sample Inputs (Phase 1 preview — wired in Phase 2) */}
+      {/* Form */}
       <View style={styles.formSection}>
+        {/* Face Value */}
         <Input
           label={t('bondCalculator.faceValue')}
           placeholder={t('bondCalculator.faceValuePlaceholder')}
           keyboardType="numeric"
+          returnKeyType="next"
           required
-          editable={false}
+          value={form.faceValue}
+          onChangeText={v => handleChange('faceValue', v)}
+          error={errors.faceValue}
+          onSubmitEditing={() => refs.couponRate.current?.focus()}
         />
+
+        {/* Coupon Rate */}
         <Input
+          ref={refs.couponRate}
           label={t('bondCalculator.couponRate')}
           placeholder={t('bondCalculator.couponRatePlaceholder')}
           keyboardType="numeric"
+          returnKeyType="next"
           required
-          editable={false}
+          value={form.couponRate}
+          onChangeText={v => handleChange('couponRate', v)}
+          error={errors.couponRate}
+          onSubmitEditing={() => refs.marketPrice.current?.focus()}
+        />
+
+        {/* Market Price */}
+        <Input
+          ref={refs.marketPrice}
+          label={t('bondCalculator.marketPrice')}
+          placeholder={t('bondCalculator.marketPricePlaceholder')}
+          keyboardType="numeric"
+          returnKeyType="next"
+          required
+          value={form.marketPrice}
+          onChangeText={v => handleChange('marketPrice', v)}
+          error={errors.marketPrice}
+          onSubmitEditing={() => refs.yearsToMaturity.current?.focus()}
+        />
+
+        {/* Years to Maturity */}
+        <Input
+          ref={refs.yearsToMaturity}
+          label={t('bondCalculator.yearsToMaturity')}
+          placeholder={t('bondCalculator.yearsToMaturityPlaceholder')}
+          keyboardType="numeric"
+          returnKeyType="done"
+          required
+          value={form.yearsToMaturity}
+          onChangeText={v => handleChange('yearsToMaturity', v)}
+          error={errors.yearsToMaturity}
+        />
+
+        {/* Coupon Frequency */}
+        <FrequencySelector
+          label={t('bondCalculator.couponFrequency')}
+          value={form.couponFrequency}
+          onChange={setFrequency}
         />
       </View>
 
-      {/* Action Buttons */}
+      {/* Actions */}
       <View style={styles.actions}>
         <Button
           label={t('common.calculate')}
           variant="primary"
           fullWidth
-          disabled
+          onPress={onCalculate}
         />
         <Button
           label={t('common.reset')}
           variant="outline"
           fullWidth
           style={styles.resetButton}
-          disabled
+          onPress={handleReset}
         />
       </View>
     </ScreenWrapper>
@@ -125,7 +181,7 @@ const styles = StyleSheet.create({
   },
   languageLabel: {
     marginBottom: Spacing.sm,
-    textAlign:"left",
+    textAlign: 'left',
   },
   languageButtons: {
     flexDirection: 'row',
