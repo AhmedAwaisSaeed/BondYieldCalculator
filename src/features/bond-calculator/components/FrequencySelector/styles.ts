@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     color: Colors.text.secondary,
     lineHeight: 20,
     marginBottom: Spacing.xs,
+    textAlign:"left",
   },
   optionsRow: {
     flexDirection: 'row',
