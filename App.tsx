@@ -11,17 +11,26 @@ import { RootNavigator } from '@/navigation/RootNavigator';
 import '@/localization/i18n';
 
 const App = () => {
-  // Set initial language based on RTL state
+  const [isReady, setIsReady] = React.useState(false);
+
   React.useEffect(() => {
-    const { useAppStore } = require('@/store/zustand/useAppStore');
-    const currentRTL = I18nManager.isRTL;
-    const store = useAppStore.getState();
-    
-    // Sync store with actual RTL state on app start
-    if (store.isRTL !== currentRTL) {
-      store.setLanguage(currentRTL ? 'ar' : 'en');
-    }
+    const initializeApp = async () => {
+      try {
+        const { useAppStore } = require('@/store/zustand/useAppStore');
+        await useAppStore.getState().initializeApp();
+        setIsReady(true);
+      } catch (error) {
+        console.error('Failed to initialize app:', error);
+        setIsReady(true); // Still show the app even if initialization fails
+      }
+    };
+
+    initializeApp();
   }, []);
+
+  if (!isReady) {
+    return null; // Or a loading screen
+  }
 
   return (
     <GestureHandlerRootView style={styles.root}>

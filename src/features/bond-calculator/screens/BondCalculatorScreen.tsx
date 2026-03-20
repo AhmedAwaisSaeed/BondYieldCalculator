@@ -11,7 +11,12 @@ import { useAppStore } from '@/store/zustand/useAppStore';
 
 export const BondCalculatorScreen = () => {
   const { t } = useTranslation();
-  const { language, setLanguage } = useAppStore();
+  const { language, setLanguage, isInitialized } = useAppStore();
+
+  // Don't render until app is properly initialized
+  if (!isInitialized) {
+    return null;
+  }
 
   return (
     <ScreenWrapper>
