@@ -1,0 +1,53 @@
+{
+  "common": {
+    "appName": "Bond Yield Calculator",
+    "calculate": "Calculate",
+    "reset": "Reset",
+    "back": "Back",
+    "language": "Language",
+    "english": "English",
+    "arabic": "Arabic",
+    "loading": "Loading...",
+    "noData": "No data available"
+  },
+  "bondCalculator": {
+    "title": "Bond Yield Calculator",
+    "subtitle": "Enter bond details to calculate yield",
+    "faceValue": "Face Value",
+    "faceValuePlaceholder": "e.g. 1000",
+    "couponRate": "Annual Coupon Rate (%)",
+    "couponRatePlaceholder": "e.g. 5.5",
+    "marketPrice": "Market Price",
+    "marketPricePlaceholder": "e.g. 950",
+    "yearsToMaturity": "Years to Maturity",
+    "yearsToMaturityPlaceholder": "e.g. 10",
+    "couponFrequency": "Coupon Frequency",
+    "annual": "Annual",
+    "semiAnnual": "Semi-Annual",
+    "results": {
+      "title": "Results",
+      "currentYield": "Current Yield",
+      "ytm": "Yield to Maturity (YTM)",
+      "totalInterest": "Total Interest Earned",
+      "premiumDiscount": "Premium / Discount",
+      "premium": "Trading at Premium",
+      "discount": "Trading at Discount",
+      "atPar": "Trading at Par"
+    },
+    "cashFlow": {
+      "title": "Cash Flow Schedule",
+      "period": "Period",
+      "paymentDate": "Payment Date",
+      "couponPayment": "Coupon Payment",
+      "cumulativeInterest": "Cumulative Interest",
+      "remainingPrincipal": "Remaining Principal"
+    },
+    "validation": {
+      "required": "This field is required",
+      "numeric": "Please enter a valid number",
+      "positive": "Value must be greater than zero",
+      "maxRate": "Rate cannot exceed 100%",
+      "maxYears": "Years must be between 1 and 50"
+    }
+  }
+}
