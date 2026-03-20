@@ -1,0 +1,53 @@
+{
+  "common": {
+    "appName": "حاسبة عائد السند",
+    "calculate": "احسب",
+    "reset": "إعادة تعيين",
+    "back": "رجوع",
+    "language": "اللغة",
+    "english": "الإنجليزية",
+    "arabic": "العربية",
+    "loading": "جاري التحميل...",
+    "noData": "لا توجد بيانات"
+  },
+  "bondCalculator": {
+    "title": "حاسبة عائد السند",
+    "subtitle": "أدخل تفاصيل السند لحساب العائد",
+    "faceValue": "القيمة الاسمية",
+    "faceValuePlaceholder": "مثال: 1000",
+    "couponRate": "معدل الكوبون السنوي (%)",
+    "couponRatePlaceholder": "مثال: 5.5",
+    "marketPrice": "سعر السوق",
+    "marketPricePlaceholder": "مثال: 950",
+    "yearsToMaturity": "سنوات حتى الاستحقاق",
+    "yearsToMaturityPlaceholder": "مثال: 10",
+    "couponFrequency": "تكرار الكوبون",
+    "annual": "سنوي",
+    "semiAnnual": "نصف سنوي",
+    "results": {
+      "title": "النتائج",
+      "currentYield": "العائد الحالي",
+      "ytm": "العائد حتى الاستحقاق",
+      "totalInterest": "إجمالي الفائدة المكتسبة",
+      "premiumDiscount": "علاوة / خصم",
+      "premium": "يتداول بعلاوة",
+      "discount": "يتداول بخصم",
+      "atPar": "يتداول بالقيمة الاسمية"
+    },
+    "cashFlow": {
+      "title": "جدول التدفق النقدي",
+      "period": "الفترة",
+      "paymentDate": "تاريخ الدفع",
+      "couponPayment": "دفعة الكوبون",
+      "cumulativeInterest": "الفائدة التراكمية",
+      "remainingPrincipal": "المبلغ الأصلي المتبقي"
+    },
+    "validation": {
+      "required": "هذا الحقل مطلوب",
+      "numeric": "يرجى إدخال رقم صحيح",
+      "positive": "يجب أن تكون القيمة أكبر من الصفر",
+      "maxRate": "لا يمكن أن يتجاوز المعدل 100%",
+      "maxYears": "يجب أن تكون السنوات بين 1 و 50"
+    }
+  }
+}
