@@ -1,5 +1,6 @@
-import { Alert, I18nManager } from 'react-native';
+import { I18nManager } from 'react-native';
 import { create } from 'zustand';
+import RNRestart from 'react-native-restart';
 import i18n from '@/localization/i18n';
 
 type Language = 'en' | 'ar';
@@ -28,23 +29,16 @@ export const useAppStore = create<AppStore>(set => ({
     const currentRTL = I18nManager.isRTL;
     
     i18n.changeLanguage(language);
+    set({ language, isRTL });
     
-    // If RTL state needs to change, force it and show restart prompt
+    // If RTL state needs to change, force it and automatically restart
     if (isRTL !== currentRTL) {
       I18nManager.forceRTL(isRTL);
       
-      Alert.alert(
-        i18n.t('common.restartRequired'),
-        i18n.t('common.restartMessage'),
-        [
-          {
-            text: i18n.t('common.ok'),
-            style: 'default',
-          },
-        ]
-      );
+      // Small delay to ensure state is saved before restart
+      setTimeout(() => {
+        RNRestart.restart();
+      }, 100);
     }
-    
-    set({ language, isRTL });
   },
 }));

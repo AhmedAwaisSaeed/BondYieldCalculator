@@ -8,10 +8,7 @@
     "english": "English",
     "arabic": "Arabic",
     "loading": "Loading...",
-    "noData": "No data available",
-    "restartRequired": "Restart Required",
-    "restartMessage": "Please restart the app to fully apply the language changes.",
-    "ok": "OK"
+    "noData": "No data available"
   },
   "bondCalculator": {
     "title": "Bond Yield Calculator",
