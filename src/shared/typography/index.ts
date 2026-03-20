@@ -12,6 +12,7 @@ export const Typography = StyleSheet.create({
     fontWeight: '700',
     lineHeight: 36,
     letterSpacing: -0.5,
+    textAlign:"left",
   },
   subheading: {
     ...base,

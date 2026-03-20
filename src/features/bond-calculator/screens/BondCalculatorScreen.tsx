@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     marginTop: Spacing.xs,
+    textAlign: 'left',
   },
   languageSwitcher: {
     backgroundColor: Colors.surface,
@@ -124,6 +125,7 @@ const styles = StyleSheet.create({
   },
   languageLabel: {
     marginBottom: Spacing.sm,
+    textAlign:"left",
   },
   languageButtons: {
     flexDirection: 'row',

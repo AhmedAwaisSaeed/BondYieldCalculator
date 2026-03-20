@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View, I18nManager } from 'react-native';
 import { styles } from './styles';
 import type { InputProps } from './types';
 
@@ -13,6 +13,13 @@ export const Input = forwardRef<TextInput, InputProps>(
       error ? styles.inputContainerError : null,
     ];
 
+    const inputStyle = [
+      styles.input,
+      // Fix placeholder alignment for RTL
+      I18nManager.isRTL && { textAlign: 'right' },
+      style,
+    ];
+
     return (
       <View style={styles.wrapper}>
         {label && (
@@ -24,7 +31,7 @@ export const Input = forwardRef<TextInput, InputProps>(
         <View style={containerStyle}>
           <TextInput
             ref={ref}
-            style={[styles.input, style]}
+            style={inputStyle}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholderTextColor="#94A3B8"
