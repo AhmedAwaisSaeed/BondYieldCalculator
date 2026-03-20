@@ -19,7 +19,7 @@ export const ScreenWrapper = ({
 }: ScreenWrapperProps) => {
   if (scrollable) {
     return (
-      <SafeAreaView style={styles.safeArea} edges={['bottom']}>
+      <SafeAreaView style={styles.safeArea} edges={['top', 'bottom', 'left', 'right']}>
         <KeyboardAwareScrollView
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
@@ -32,7 +32,7 @@ export const ScreenWrapper = ({
   }
 
   return (
-    <SafeAreaView style={styles.safeArea} edges={['bottom']}>
+    <SafeAreaView style={styles.safeArea} edges={['top', 'bottom', 'left', 'right']}>
       <View style={styles.staticContent}>{children}</View>
     </SafeAreaView>
   );

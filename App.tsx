@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet } from 'react-native';
+import { I18nManager, StatusBar, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
@@ -11,12 +11,28 @@ import { RootNavigator } from '@/navigation/RootNavigator';
 import '@/localization/i18n';
 
 const App = () => {
+  // Set initial language based on RTL state
+  React.useEffect(() => {
+    const { useAppStore } = require('@/store/zustand/useAppStore');
+    const currentRTL = I18nManager.isRTL;
+    const store = useAppStore.getState();
+    
+    // Sync store with actual RTL state on app start
+    if (store.isRTL !== currentRTL) {
+      store.setLanguage(currentRTL ? 'ar' : 'en');
+    }
+  }, []);
+
   return (
     <GestureHandlerRootView style={styles.root}>
       <Provider store={store}>
         <SafeAreaProvider>
           <KeyboardProvider>
-            <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent />
+            <StatusBar 
+              barStyle="dark-content" 
+              backgroundColor="transparent" 
+              translucent={false}
+            />
             <RootNavigator />
           </KeyboardProvider>
         </SafeAreaProvider>
