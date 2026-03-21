@@ -15,8 +15,14 @@ export const styles = StyleSheet.create({
     padding: Spacing.md,
     paddingBottom: Spacing.xl, // Extra bottom padding for keyboard
   },
+  scrollContentNoPadding: {
+    flexGrow: 1,
+  },
   staticContent: {
     flex: 1,
     padding: Spacing.md,
+  },
+  staticContentNoPadding: {
+    flex: 1,
   },
 });

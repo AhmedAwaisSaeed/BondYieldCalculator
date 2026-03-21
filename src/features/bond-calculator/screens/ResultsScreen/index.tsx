@@ -3,8 +3,7 @@ import { Text, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { RouteProp } from '@react-navigation/native';
-import { ScreenWrapper } from '@/shared/components/ScreenWrapper';
-import { Button } from '@/shared/components/Button';
+import { ScreenWrapper, CustomHeader } from '@/shared/components';
 import { Typography } from '@/shared/typography';
 import type { RootStackParamList } from '@/navigation/types';
 import { getPremiumDiscountStatus } from '../../utils/calculations';
@@ -57,14 +56,22 @@ export const ResultsScreen = () => {
   };
 
   return (
-    <ScreenWrapper scrollable={false}>
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={Typography.heading}>{t('bondCalculator.results.title')}</Text>
-        <Text style={[Typography.bodySmall, styles.subtitle]}>
-          Bond yield calculation results
-        </Text>
-      </View>
+    <ScreenWrapper scrollable={false} noPadding={true}>
+      {/* Custom Header */}
+      <CustomHeader
+        title={t('bondCalculator.results.title')}
+        onBackPress={() => navigation.goBack()}
+      />
+      
+      {/* Content */}
+      <View style={styles.content}>
+        {/* Header */}
+        <View style={styles.header}>
+          <Text style={Typography.heading}>{t('bondCalculator.results.title')}</Text>
+          <Text style={[Typography.bodySmall, styles.subtitle]}>
+            Bond yield calculation results
+          </Text>
+        </View>
 
       {/* Results */}
       <View style={styles.resultsContainer}>
@@ -124,14 +131,15 @@ export const ResultsScreen = () => {
         </View>
       </View>
 
-      {/* Actions */}
-      <View style={styles.actions}>
-        <Button
-          label={t('common.back')}
-          variant="primary"
-          fullWidth
-          onPress={() => navigation.goBack()}
-        />
+        {/* Actions */}
+        <View style={styles.actions}>
+          <Button
+            label={t('common.back')}
+            variant="primary"
+            fullWidth
+            onPress={() => navigation.goBack()}
+          />
+        </View>
       </View>
     </ScreenWrapper>
   );

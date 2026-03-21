@@ -32,8 +32,7 @@ export const RootNavigator = () => {
           name="Results"
           component={ResultsScreen}
           options={{
-            title: t('bondCalculator.results.title'),
-            headerShown: true,
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

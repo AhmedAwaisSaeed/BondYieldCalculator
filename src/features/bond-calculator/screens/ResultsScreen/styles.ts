@@ -3,6 +3,10 @@ import { Colors } from '@/shared/theme/colors';
 import { BorderRadius, Spacing } from '@/shared/theme/spacing';
 
 export const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    padding: Spacing.md,
+  },
   header: {
     marginBottom: Spacing.xl,
   },
