@@ -64,24 +64,36 @@ export const calculateCashFlowSchedule = (
  * Calculate summary statistics for cash flow
  */
 export const calculateCashFlowSummary = (cashFlowEntries: CashFlowEntry[]) => {
+  if (!cashFlowEntries || cashFlowEntries.length === 0) {
+    return {
+      totalCashFlow: 0,
+      totalCouponPayments: 0,
+      principalRepayment: 0,
+      numberOfPayments: 0,
+    };
+  }
+
   const totalCashFlow = cashFlowEntries.reduce(
     (sum, entry) => sum + entry.couponPayment,
     0
   );
+  
+  // Calculate principal repayment from the difference in remaining principal
+  const firstEntry = cashFlowEntries[0];
+  const lastEntry = cashFlowEntries[cashFlowEntries.length - 1];
+  const principalRepayment = firstEntry.remainingPrincipal - lastEntry.remainingPrincipal;
   
   const totalCouponPayments = cashFlowEntries.reduce(
     (sum, entry, index) => {
       // Don't count principal repayment in the last payment
       const isLastPayment = index === cashFlowEntries.length - 1;
       const couponOnly = isLastPayment 
-        ? entry.couponPayment - faceValue 
+        ? entry.couponPayment - principalRepayment 
         : entry.couponPayment;
       return sum + couponOnly;
     },
     0
   );
-
-  const principalRepayment = Number(faceValue.toFixed(2));
 
   return {
     totalCashFlow: Number(totalCashFlow.toFixed(2)),
