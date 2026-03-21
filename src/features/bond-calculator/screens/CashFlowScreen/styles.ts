@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
   },
   tableContainer: {
     flex: 1,
-    marginBottom: Spacing.lg,
+    marginBottom: Spacing.xl,
   },
   tableTitle: {
     fontSize: 16,

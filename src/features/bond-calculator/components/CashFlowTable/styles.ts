@@ -33,7 +33,10 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   list: {
-    maxHeight: 400, // Limit height for scrolling
+    maxHeight: 400,
+  },
+  listContent: {
+    paddingBottom: 100, // Allow last row to scroll fully above adjacent content
   },
   row: {
     flexDirection: 'row',

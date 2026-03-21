@@ -110,11 +110,10 @@ export const CashFlowTable = ({ cashFlowEntries }: CashFlowTableProps) => {
   const renderItem = ({ item, index }: { item: CashFlowEntry; index: number }) => {
     const isLast = index === cashFlowEntries.length - 1;
     const isMaturity = item.remainingPrincipal === 0;
-    
     return (
-      <TableRow 
-        item={item} 
-        index={index} 
+      <TableRow
+        item={item}
+        index={index}
         isLast={isLast}
         isMaturity={isMaturity}
       />
@@ -129,7 +128,8 @@ export const CashFlowTable = ({ cashFlowEntries }: CashFlowTableProps) => {
         renderItem={renderItem}
         keyExtractor={(item) => `period-${item.period}`}
         style={styles.list}
-        showsVerticalScrollIndicator={true}
+        contentContainerStyle={styles.listContent}
+        showsVerticalScrollIndicator={false}
         nestedScrollEnabled={true}
       />
     </View>
