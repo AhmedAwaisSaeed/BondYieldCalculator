@@ -64,7 +64,7 @@ export const useAppStore = create<AppStore>()(
           // Small delay to ensure state is persisted before restart
           setTimeout(() => {
             RNRestart.restart();
-          }, 200);
+          }, 50);
         }
       },
     }),
