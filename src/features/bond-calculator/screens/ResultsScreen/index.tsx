@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { RouteProp } from '@react-navigation/native';
-import { ScreenWrapper, CustomHeader } from '@/shared/components';
+import { ScreenWrapper, CustomHeader, Button } from '@/shared/components';
 import { Typography } from '@/shared/typography';
 import type { RootStackParamList } from '@/navigation/types';
 import { getPremiumDiscountStatus } from '../../utils/calculations';
@@ -69,7 +69,7 @@ export const ResultsScreen = () => {
         <View style={styles.header}>
           <Text style={Typography.heading}>{t('bondCalculator.results.title')}</Text>
           <Text style={[Typography.bodySmall, styles.subtitle]}>
-            Bond yield calculation results
+            {t('bondCalculator.results.subtitle')}
           </Text>
         </View>
 

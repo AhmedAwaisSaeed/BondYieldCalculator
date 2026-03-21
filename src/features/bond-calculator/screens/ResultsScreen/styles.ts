@@ -39,6 +39,7 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
     color: Colors.text.secondary,
     flex: 1,
+    textAlign: 'left',
   },
   resultValue: {
     fontSize: 16,
