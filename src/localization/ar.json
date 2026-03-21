@@ -38,8 +38,15 @@
     },
     "cashFlow": {
       "title": "جدول التدفق النقدي",
+      "subtitle":"جدول التدفق النقدي المفصل لسندك",
+      "summary": "ملخص",
+      "totalCashFlow": "إجمالي التدفق النقدي",
+      "totalCouponPayments": "إجمالي دفعات الكوبون",
+      "principalRepayment": "إجمالي المبلغ الأصلي المتبقي",
+      "numberOfPayments": "عدد الدفعات",
       "period": "الفترة",
       "paymentDate": "تاريخ الدفع",
+      "paymentSchedule": "جدول التدفق النقدي",
       "couponPayment": "دفعة الكوبون",
       "cumulativeInterest": "الفائدة التراكمية",
       "remainingPrincipal": "المبلغ الأصلي المتبقي"

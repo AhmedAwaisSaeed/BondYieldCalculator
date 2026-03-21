@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: Colors.text.primary,
     marginBottom: Spacing.md,
+    textAlign:"left"
   },
   summaryRow: {
     flexDirection: 'row',
@@ -56,6 +57,7 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: Colors.text.primary,
     marginBottom: Spacing.md,
+    textAlign:"left"
   },
   actions: {
     gap: Spacing.sm,

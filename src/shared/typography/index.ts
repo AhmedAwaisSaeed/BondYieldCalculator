@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle } from 'react-native';
+import { I18nManager, StyleSheet, TextStyle } from 'react-native';
 import { Colors } from '@/shared/theme/colors';
 
 const base: TextStyle = {
@@ -10,7 +10,7 @@ export const Typography = StyleSheet.create({
     ...base,
     fontSize: 28,
     fontWeight: '700',
-    lineHeight:  60,
+    lineHeight: I18nManager.isRTL ? 60 : 36,
     letterSpacing: -0.5,
     textAlign:"left",
   },

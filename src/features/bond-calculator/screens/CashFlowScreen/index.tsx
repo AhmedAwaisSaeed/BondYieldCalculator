@@ -47,37 +47,37 @@ export const CashFlowScreen = () => {
             {t('bondCalculator.cashFlow.title')}
           </Text>
           <Text style={[Typography.bodySmall, styles.subtitle]}>
-            Detailed payment schedule for your bond
+            {t('bondCalculator.cashFlow.subtitle')}
           </Text>
         </View>
 
         {/* Summary Card */}
         <View style={styles.summaryCard}>
-          <Text style={styles.summaryTitle}>Summary</Text>
+          <Text style={styles.summaryTitle}>{t('bondCalculator.cashFlow.summary')}</Text>
           
           <View style={styles.summaryRow}>
-            <Text style={styles.summaryLabel}>Total Cash Flow:</Text>
+            <Text style={styles.summaryLabel}>{t('bondCalculator.cashFlow.totalCashFlow')}</Text>
             <Text style={styles.summaryValue}>
               {formatCurrency(summary.totalCashFlow)}
             </Text>
           </View>
           
           <View style={styles.summaryRow}>
-            <Text style={styles.summaryLabel}>Total Coupon Payments:</Text>
+            <Text style={styles.summaryLabel}>{t('bondCalculator.cashFlow.totalCouponPayments')}</Text>
             <Text style={styles.summaryValue}>
               {formatCurrency(summary.totalCouponPayments)}
             </Text>
           </View>
           
           <View style={styles.summaryRow}>
-            <Text style={styles.summaryLabel}>Principal Repayment:</Text>
+            <Text style={styles.summaryLabel}>{t('bondCalculator.cashFlow.principalRepayment')}</Text>
             <Text style={styles.summaryValue}>
               {formatCurrency(Number(bondInput.faceValue))}
             </Text>
           </View>
           
           <View style={[styles.summaryRow, styles.summaryRowLast]}>
-            <Text style={styles.summaryLabel}>Number of Payments:</Text>
+            <Text style={styles.summaryLabel}>{t('bondCalculator.cashFlow.numberOfPayments')}</Text>
             <Text style={styles.summaryValue}>
               {summary.numberOfPayments}
             </Text>
@@ -86,7 +86,7 @@ export const CashFlowScreen = () => {
 
         {/* Cash Flow Table */}
         <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Payment Schedule</Text>
+          <Text style={styles.tableTitle}>{t('bondCalculator.cashFlow.paymentSchedule')}</Text>
           <CashFlowTable cashFlowEntries={cashFlowEntries} />
         </View>
 
