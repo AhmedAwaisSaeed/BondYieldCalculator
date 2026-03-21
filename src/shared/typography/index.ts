@@ -10,7 +10,7 @@ export const Typography = StyleSheet.create({
     ...base,
     fontSize: 28,
     fontWeight: '700',
-    lineHeight: 36,
+    lineHeight:  60,
     letterSpacing: -0.5,
     textAlign:"left",
   },

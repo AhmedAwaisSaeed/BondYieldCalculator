@@ -26,6 +26,7 @@
     "semiAnnual": "Semi-Annual",
     "results": {
       "title": "Results",
+      "subtitle": "Bond yield calculation results",
       "currentYield": "Current Yield",
       "ytm": "Yield to Maturity (YTM)",
       "totalInterest": "Total Interest Earned",

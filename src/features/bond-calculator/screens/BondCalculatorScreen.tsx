@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useNavigation } from '@react-navigation/native';
 import { ScreenWrapper } from '@/shared/components/ScreenWrapper';
 import { Button } from '@/shared/components/Button';
 import { Input } from '@/shared/components/Input';
@@ -8,11 +9,14 @@ import { Colors } from '@/shared/theme/colors';
 import { BorderRadius, Spacing } from '@/shared/theme/spacing';
 import { Typography } from '@/shared/typography';
 import { useAppStore } from '@/store/zustand/useAppStore';
+import type { RootStackNavigationProp } from '@/navigation/types';
 import { FrequencySelector } from '../components/FrequencySelector';
 import { useBondForm } from '../hooks/useBondForm';
+import { calculateBondMetrics } from '../utils/calculations';
 
 export const BondCalculatorScreen = () => {
   const { t } = useTranslation();
+  const navigation = useNavigation<RootStackNavigationProp>();
   const { language, setLanguage, isInitialized } = useAppStore();
   const { form, errors, setFrequency, handleChange, handleSubmit, handleReset, refs } =
     useBondForm();
@@ -24,7 +28,8 @@ export const BondCalculatorScreen = () => {
   const onCalculate = () => {
     const valid = handleSubmit();
     if (valid) {
-      // Phase 3: navigate to results
+      const results = calculateBondMetrics(form);
+      navigation.navigate('Results', { results });
     }
   };
 
