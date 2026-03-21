@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { BondCalculatorScreen } from '@/features/bond-calculator/screens/BondCalculatorScreen';
 import { ResultsScreen } from '@/features/bond-calculator/screens/ResultsScreen';
+import { CashFlowScreen } from '@/features/bond-calculator/screens/CashFlowScreen';
 import { Colors } from '@/shared/theme/colors';
 import type { RootStackParamList } from './types';
 
@@ -31,6 +32,13 @@ export const RootNavigator = () => {
         <Stack.Screen
           name="Results"
           component={ResultsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="CashFlow"
+          component={CashFlowScreen}
           options={{
             headerShown: false,
           }}

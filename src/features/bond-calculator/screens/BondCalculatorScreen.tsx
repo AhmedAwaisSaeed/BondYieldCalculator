@@ -29,7 +29,7 @@ export const BondCalculatorScreen = () => {
     const valid = handleSubmit();
     if (valid) {
       const results = calculateBondMetrics(form);
-      navigation.navigate('Results', { results });
+      navigation.navigate('Results', { results, bondInput: form });
     }
   };
 

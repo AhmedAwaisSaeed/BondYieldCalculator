@@ -15,7 +15,7 @@ export const ResultsScreen = () => {
   const { t } = useTranslation();
   const navigation = useNavigation();
   const route = useRoute<ResultsScreenRouteProp>();
-  const { results } = route.params;
+  const { results, bondInput } = route.params;
 
   const premiumDiscountStatus = getPremiumDiscountStatus(results.premiumDiscount);
 
@@ -133,6 +133,12 @@ export const ResultsScreen = () => {
 
         {/* Actions */}
         <View style={styles.actions}>
+          <Button
+            label={t('common.viewCashFlow')}
+            variant="secondary"
+            fullWidth
+            onPress={() => navigation.navigate('CashFlow', { bondInput })}
+          />
           <Button
             label={t('common.back')}
             variant="primary"

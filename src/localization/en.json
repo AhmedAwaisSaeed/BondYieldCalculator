@@ -8,7 +8,8 @@
     "english": "English",
     "arabic": "Arabic",
     "loading": "Loading...",
-    "noData": "No data available"
+    "noData": "No data available",
+    "viewCashFlow": "View Cash Flow Schedule"
   },
   "bondCalculator": {
     "title": "Bond Yield Calculator",
