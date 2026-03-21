@@ -9,3 +9,7 @@ export {
   calculatePremiumDiscount,
   getPremiumDiscountStatus,
 } from './calculations';
+export {
+  calculateCashFlowSchedule,
+  calculateCashFlowSummary,
+} from './cashFlowCalculations';

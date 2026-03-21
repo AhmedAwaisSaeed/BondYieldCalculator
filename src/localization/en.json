@@ -8,7 +8,8 @@
     "english": "English",
     "arabic": "Arabic",
     "loading": "Loading...",
-    "noData": "No data available"
+    "noData": "No data available",
+    "viewCashFlow": "View Cash Flow Schedule"
   },
   "bondCalculator": {
     "title": "Bond Yield Calculator",
@@ -37,8 +38,15 @@
     },
     "cashFlow": {
       "title": "Cash Flow Schedule",
+      "subtitle":"detailed payment schedule for your bond",
+      "summary": "Summary",
+      "totalCashFlow": "Total Cash Flow",
+      "totalCouponPayments": "Total Coupon Payments",
+      "principalRepayment": "Principal Repayment",
+      "numberOfPayments": "Number of Payments",
       "period": "Period",
       "paymentDate": "Payment Date",
+      "paymentSchedule": "Payment Schedule",
       "couponPayment": "Coupon Payment",
       "cumulativeInterest": "Cumulative Interest",
       "remainingPrincipal": "Remaining Principal"

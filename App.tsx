@@ -1,9 +1,7 @@
 import React from 'react';
-import { I18nManager, StatusBar, StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Provider } from 'react-redux';
-import { store } from '@/store/rtk/store';
 import { RootNavigator } from '@/navigation/RootNavigator';
 
 // Initialise i18n before the first render
@@ -33,7 +31,6 @@ const App = () => {
 
   return (
     <GestureHandlerRootView style={styles.root}>
-      <Provider store={store}>
         <SafeAreaProvider>
           <StatusBar 
             barStyle="dark-content" 
@@ -42,7 +39,6 @@ const App = () => {
           />
           <RootNavigator />
         </SafeAreaProvider>
-      </Provider>
     </GestureHandlerRootView>
   );
 };

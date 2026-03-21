@@ -1,10 +1,11 @@
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { BondResult } from '@/features/bond-calculator/types';
+import type { BondResult, BondInput } from '@/features/bond-calculator/types';
 
 export type RootStackParamList = {
   BondCalculator: undefined;
-  Results: { results: BondResult };
-  // Future screens: CashFlow, Settings
+  Results: { results: BondResult; bondInput: BondInput };
+  CashFlow: { bondInput: BondInput };
+  // Future screens: Settings
 };
 
 export type RootStackNavigationProp =
